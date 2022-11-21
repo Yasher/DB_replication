@@ -73,9 +73,10 @@ sudo docker exec replication-master mysqldump sakila > ~/DB_replication/sakila.s
 # запомнил File и Position
 sudo docker exec -it replication-master mysql
 mysql> SHOW MASTER STATUS;
-
+```
 ![1](img/1.png)
 
+```bash
 # разлочил таблицы
 mysql> UNLOCK TABLES;
 
@@ -105,14 +106,17 @@ MASTER_LOG_POS=156;
 # запустил slave
 mysql> START SLAVE;
 mysql> SHOW SLAVE STATUS\G
-
+```
 ![2](img/2.png)
 
-
+```bash
 # Для проверки добавил строку 201 в таблицу actor на мастере
+```
 ![3](img/3.png)
 
+```
 # проверил на слэйве
+```
 ![4](img/4.png)
 ```
 ---
